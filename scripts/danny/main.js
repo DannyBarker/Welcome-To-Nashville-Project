@@ -10,6 +10,12 @@ zomBtn.addEventListener('click', () => {
         wordReturn.forEach( keyWord => {
             createRestaurantOption(keyWord.restaurant)
         });
+        if (document.querySelector("#test").innerHTML === "<h1>Results:</h1>") {
+            document.querySelector("#test").innerHTML = 
+            `<h1>Results:</h1>
+                <p>Unable to find "${searchText.value}":(</p>
+            `
+        }
         // restaurantList.restaurants.filter( (eatery) => {
         //     let obj = eatery.restaurant;
         //     if (obj.name.includes(searchText.value) || obj.cuisines.includes(searchText.value)) {

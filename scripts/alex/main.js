@@ -28,10 +28,30 @@ document.querySelector("#eventbrite-btn").addEventListener("click", () => {
     });
 });
 
+
 const createEventOption = newEvent => {
   document.querySelector("#test").innerHTML += `
+  <div>
   <a href="${newEvent.url}" target="_blank" class="noDecoration"><h3 class="header">${newEvent.name.text}</h3></a>
                 <h6>Start Date/Time:${newEvent.start.local}</h6>
                 <h6>End Date/Time:${newEvent.end.local}</h6>
-                `;
+                <button id="save">Save</button>
+                </div>
+                `;                
 };
+
+// let saveBtn = document.querySelector("#save")
+
+function newPutRequest () {
+  let newItinerary = {
+    "id": 1,
+    "restaurant": "burger",
+  }
+  fetch(`http://localhost:8088/itinerary`, {
+    method: 'PUT',
+    body: JSON.stringify(newItinerary),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(res => res.json())
+}

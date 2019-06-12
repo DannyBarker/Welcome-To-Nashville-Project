@@ -8,7 +8,7 @@ document.querySelector("#eventbrite-btn").addEventListener("click", () => {
   )
     .then(eventData => eventData.json())
     .then(event => {
-      document.querySelector("#events").innerHTML = "<h1>Results:</h1>";
+      document.querySelector("#test").innerHTML = "<h1>Results:</h1>";
       let newEvent = event.events.filter(name => {
         return (
           name.name.text.includes(searchInput.value) ||
@@ -16,7 +16,7 @@ document.querySelector("#eventbrite-btn").addEventListener("click", () => {
         );
       });
       if (newEvent.length === 0) {
-        document.querySelector("#events").innerHTML =
+        document.querySelector("#test").innerHTML =
           "<h1>Results:</h1><p>Please search for something else</p>";
       } else
         newEvent.forEach(name => {
@@ -29,8 +29,8 @@ document.querySelector("#eventbrite-btn").addEventListener("click", () => {
 });
 
 const createEventOption = newEvent => {
-  document.querySelector("#events").innerHTML += `
-                <h4><a href="${newEvent.url}">${newEvent.name.text}</a></h4>
+  document.querySelector("#test").innerHTML += `
+  <a href="${newEvent.url}" target="_blank" class="noDecoration"><h3 class="header">${newEvent.name.text}</h3></a>
                 <h6>Start Date/Time:${newEvent.start.local}</h6>
                 <h6>End Date/Time:${newEvent.end.local}</h6>
                 `;

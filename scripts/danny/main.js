@@ -10,8 +10,6 @@ zomBtn.addEventListener('click', () => {
             let obj = eatery.restaurant;
             if (obj.name.includes(searchText.value)) {
                 let newObj = obj; 
-                console.log(newObj.location.city);
-                console.log(newObj.location.zipcode);
                 createRestaurantOption(newObj)
             }
             

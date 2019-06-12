@@ -1,7 +1,7 @@
 // taking an object to create the HTML representation to place it in the DOM
-const concertId = document.querySelector("#button");
+const concertId = document.querySelector("#button-is-primary");
 const inputId = document.querySelector("#ticketmasterInput");
-document.querySelector("#button").addEventListener("click", () => {
+document.querySelector("#button-is-primary").addEventListener("click", () => {
   fetch(
     `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${
       ticketmaster_keys.ticketmaster_key

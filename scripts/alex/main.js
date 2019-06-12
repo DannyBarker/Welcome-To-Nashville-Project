@@ -4,13 +4,18 @@ document.querySelector("#eventbrite-btn").addEventListener("click", () => {
     fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${searchInput.value}&location.address=nashville&token=${app_key.token}`)
     .then(eventData => eventData.json())
     .then(event => {
-        document.querySelector("#events").innerHTML = "";
+        document.querySelector("#events").innerHTML = "<h1>Results:</h1>";
                 event.events.filter( (name) =>{
             // console.log(name.name.text)
             if (name.name.text.includes(searchInput.value) || name.description.html.includes(searchInput.value)) {
                 let newEvent = name;
-                createEventOption(newEvent)
                 console.log("done")
+            } else if (document.querySelector("#events").innerHTML = "<h1>Results:</h1>") {
+                document.querySelector("#events").innerHTML =
+                `
+                <h1>Results:</h1>
+                <p>Unable to find "${searchInput.value}" please search for something else!</p>
+                `
             }
         })
 

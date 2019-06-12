@@ -1,12 +1,9 @@
-.noDecoration {
-    text-decoration: none;
-    color: black;
+
+.input {
+    margin-bottom: 5px;
 }
 
-.header {
-    color: #cc0000;
-}
-
-h1 {
-    color: #002d65;
+.box {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

@@ -5,26 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <title>Welcome to Nashville</title>
 </head>
 <body>
-    <fieldset>
-        <input id="eventbrite-search" type="text" placeholder="Meetups">
-        <button id="eventbrite-btn">Button</button>
-    </fieldset>
-    <fieldset>
-        <input id="restaurantInput" type="text" placeholder="Hungry for...">
-        <button id="zomatoBtn">Button</button>
-    </fieldset>
-    <fieldset>
-        <input id="ticketmaster-search" type="text">
-        <button>Button</button>
-    </fieldset>
-    <fieldset>
-        <input id="metro-search" type="text">
-        <button>Button</button>
-    </fieldset>
+
+    <div class="container">
+    <div class= "box">
+
+    <div class="field">
+    <label class="label">Search Meetups</label>
+    <div class="control">
+        <input id="eventbrite-search" class="input" type="text" placeholder="Search">
+        <button id="eventbrite-btn" class="button is-primary">Submit</button>
+    </div>
+    </div>
+   
+    <div class="field">
+    <label class="label">Search Concerts</label>
+    <div class="control">
+        <input id="ticketmaster-search" class="input" type="text" placeholder="Search">
+        <button class="button is-primary">Submit</button>
+    </div>
+    </div>
+
+    <div class="field">
+    <label class="label">Search Food</label>
+    <div class="control">
+        <input id="restaurantInput" class="input" type="text" placeholder="Search">
+        <button id="zomatoBtn" class="button is-primary">Submit</button>
+    </div>
+    </div>
+
+    <div class="field">
+    <div class="control">
+    <div class="select is-rounded">
+    <select id="metro-search">
+        <option>Select Park Feature</option>
+        <option value="hiking_trails">Hiking Trails</option>
+        <option value="soccer_fields">Soccer Fields</option>
+        <option value="playground">Playground</option>
+        <option value="dog_park">Dog Park</option>
+        <option value="mountain_bike_trails">Mountain Bike Trail</option>
+    </select>
+    </div>
+    </div>
+    </div>
+
+    <!-- Sydney Empty Div -->
+
+    <div id="showOptions">
+
+    </div>
+
+    <!-- Danny & Alex Empty div -->
+
     <section id="test"></section>
+
+    </div>
+    </div>
+
+    <!-- Sydney's scripts -->
+
+    <script src="scripts/sydney/key.js"></script>
+    <script src="scripts/sydney/forms.js"></script>
+    <script src="scripts/sydney/main.js"></script>
+
+   <!-- Alex & Danny's Scripts -->
+    
     <script src="scripts/keys.js"></script>
     <script src="scripts/alex/key.js"></script>
     <script src="scripts/danny/main.js"></script>

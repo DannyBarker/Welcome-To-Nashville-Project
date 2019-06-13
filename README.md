@@ -10,7 +10,8 @@
 1.  Clone repository fromt Github to your local git repository.
 1.  Add your keys to your own keys.js file and then add that file to the .gitignore file
 
-``` const zomato = {
+``` 
+const zomato = {
     user_key: "Put Your Zomato Key Here",
 }
 

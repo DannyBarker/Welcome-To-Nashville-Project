@@ -23,12 +23,16 @@ zomBtn.addEventListener('click', () => {
     const createRestaurantOption = (newObj) => {
         document.querySelector("#test").innerHTML += 
         `
-        <a href="${newObj.url}" target="_blank" class="noDecoration"><h3 class="header">${newObj.name}</h3></a>
-        <h5>Rating: ${newObj.user_rating.aggregate_rating}</h5>
-        <address>Address: ${newObj.location.address}<br>
-        ${newObj.location.city}
-        ${newObj.location.zipcode}
-        </address>
+        <div id="createRestaurant">
+            <a href="${newObj.url}" target="_blank" class="noDecoration"><h3 class="header">${newObj.name}</h3></a>
+            <h5>Rating:</h5>
+            <p class="rating">${newObj.user_rating.aggregate_rating}</p>
+            <address>Address: ${newObj.location.address}<br>
+                ${newObj.location.city}
+                ${newObj.location.zipcode}
+            </address>
+            <button id="save">Save</button>
+        </div>
         `
         
     }

@@ -22,4 +22,5 @@ document.querySelector("#button-is-primary").addEventListener("click", () => {
         createConcertSearchResults(ticketmasterInput);
       }
     });
+    inputId.value = "";
 });

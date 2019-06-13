@@ -7,3 +7,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.noDecoration {
+    text-decoration: none;
+    color: #00d1b2;
+}
+
+.header {
+    color: #00d1b2;
+}
+
+.rating {
+    color: #FFDF00;
+}

@@ -7,8 +7,18 @@ document.querySelector("#metro-search").addEventListener("change", () => {
     .then(data => data.json())  
     .then(data => {
       showOptionText.innerHTML = ""
-      console.log(data)
       renderSearchResults(data)
+      let savRestaurant = document.querySelector("#test")
+      for (let i = 0; i < savRestaurant.childNodes.length; i++) {
+        let one = savRestaurant.childNodes[i].childNodes
+          if (one.length !== 0 && one.length !== 1) {
+            one[9].addEventListener('click', () => {
+              itineraryArr.park= `${one[1].innerText}`
+              makeItinerary(itineraryArr);
+          })
+
+        }
+      }
     })
 });
 

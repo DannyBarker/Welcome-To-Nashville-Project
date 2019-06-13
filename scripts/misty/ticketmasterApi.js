@@ -21,6 +21,17 @@ document.querySelector("#button-is-primary").addEventListener("click", () => {
         const ticketmasterInput = concertList._embedded.events[i];
         createConcertSearchResults(ticketmasterInput);
       }
-    });
+      let savRestaurant = document.querySelector("#test")
+      for (let i = 0; i < savRestaurant.childNodes.length; i++) {
+        let one = savRestaurant.childNodes[i].childNodes
+            if (one.length !== 0 && one.length !== 1) {
+              one[3].addEventListener('click', () => {
+                itineraryArr.concert = `${one[1].innerText}`
+                makeItinerary(itineraryArr)
+            })
+      }
+      
+    };
     inputId.value = "";
-});
+  })
+})

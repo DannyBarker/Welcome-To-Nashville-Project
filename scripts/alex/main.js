@@ -1,6 +1,5 @@
 let searchAlexInput = document.querySelector("#eventbrite-search");
 document.querySelector("#eventbrite-btn").addEventListener("click", () => {
-  console.log("search term", searchAlexInput.value);
   fetch(
     `https://www.eventbriteapi.com/v3/events/search/?q=${
       searchAlexInput.value
@@ -20,39 +19,39 @@ document.querySelector("#eventbrite-btn").addEventListener("click", () => {
           "<h1>Results:</h1><p>Please search for something else</p>";
       } else
         newEvent.forEach(name => {
-          console.log(name.name.text);
           let newEvent = name;
-          createEventOption(newEvent);
-          console.log("done");
+          num++;
+          createEventOption(newEvent, num);
         });
+        let savRestaurant = document.querySelector("#test")
+        for (let i = 0; i < savRestaurant.childNodes.length; i++) {
+            let one = savRestaurant.childNodes[i].childNodes
+            if (one.length !== 0 && one.length !== 1) {
+              one[7].addEventListener('click', () => {
+                itineraryArr.meetup.name = `${one[1].innerText}`
+                itineraryArr.meetup.url = `${one[1].childNodes[3].innerHTML}`
+                makeItinerary(itineraryArr);;
+            })
+          };
+          searchAlexInput.value = "";
+        };
+    
+      });
+        
+      let num = 0;
+        
+      const createEventOption = (newEvent, num) => {
+        document.querySelector("#test").innerHTML += `
+        <div id="createMeetUps">
+        <div>
+          <a href="${newEvent.url}" target="_blank" class="noDecoration"><h3 class="header">${newEvent.name.text}</h3></a>
+          <p hidden>${newEvent.url}</p>
+        </div>
+        <h6>Start Date/Time:${newEvent.start.local}</h6>
+        <h6>End Date/Time:${newEvent.end.local}</h6>
+        <button id="save-this${num}">Save</button>
+        </div>
+        `;                
+      };
+      
     });
-    searchAlexInput.value = "";
-});
-
-
-const createEventOption = newEvent => {
-  document.querySelector("#test").innerHTML += `
-  <div id="createMeetUps">
-    <a href="${newEvent.url}" target="_blank" class="noDecoration"><h3 class="header">${newEvent.name.text}</h3></a>
-    <h6>Start Date/Time:${newEvent.start.local}</h6>
-    <h6>End Date/Time:${newEvent.end.local}</h6>
-    <button id="save">Save</button>
-  </div>
-                `;                
-};
-
-// let saveBtn = document.querySelector("#save")
-
-function newPutRequest () {
-  let newItinerary = {
-    "id": 1,
-    "restaurant": "burger",
-  }
-  fetch(`http://localhost:8088/itinerary`, {
-    method: 'PUT',
-    body: JSON.stringify(newItinerary),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }).then(res => res.json())
-}

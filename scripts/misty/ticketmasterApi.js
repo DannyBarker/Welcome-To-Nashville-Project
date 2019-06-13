@@ -11,6 +11,7 @@ document.querySelector("#button-is-primary").addEventListener("click", () => {
   )
     .then(data => data.json())
     .then(concertList => {
+      document.querySelector("#test").innerHTML = "";
       //   console.log("concert list", concertList);
       //   console.log(concertList._embedded.events);
       //   for (let i = 0; i < concertList._embedded.events.length; i++) {

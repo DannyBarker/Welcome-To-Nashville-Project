@@ -23,7 +23,7 @@ zomBtn.addEventListener('click', () => {
                 savRestaurant.childNodes[i].childNodes[9].addEventListener('click', () => {
                     itineraryArr.restaurant.name = `${one[1].innerText}`
                     itineraryArr.restaurant.url = `${one[1].childNodes[3].innerHTML}`
-                    makeItinerary(itineraryArr)
+                    makeItinerary(itineraryArr);
                 })
             }
             };   
@@ -51,10 +51,3 @@ zomBtn.addEventListener('click', () => {
         </div>
         `
     }
-const makeItinerary = (arr) => {
-   document.querySelector(".content").innerHTML =
-    `
-        <h3>Restaurant:</h3>
-        <a href="${arr.restaurant.url}" target="_blank"><p>${arr.restaurant.name}</p></a>
-    `
-}

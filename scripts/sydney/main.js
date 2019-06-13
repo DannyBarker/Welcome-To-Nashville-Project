@@ -15,7 +15,7 @@ const createSearchResults = (value) => {
     `
 }
 
-const showOptionText = document.querySelector("#showOptions")
+const showOptionText = document.querySelector("#test")
 
 const renderSearchResults = (results) => {
     for(i = 0; i < 7; i++) {

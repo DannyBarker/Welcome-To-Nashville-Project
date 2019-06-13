@@ -15,9 +15,10 @@
 const createConcertSearchResults = (concertObj) => {
     document.querySelector("#test").innerHTML +=
      `
-    <div class = "concert">
-    <h1>${concertObj.name}</h1>
-    </div>  
+    <div class = "createConcert">
+        <h3 class="header">${concertObj.name}</h3>
+        <button id="save">Save</button>
+    </div>
         `
 }
 

@@ -26,17 +26,18 @@ document.querySelector("#eventbrite-btn").addEventListener("click", () => {
           console.log("done");
         });
     });
+    searchAlexInput.value = "";
 });
 
 
 const createEventOption = newEvent => {
   document.querySelector("#test").innerHTML += `
-  <div>
-  <a href="${newEvent.url}" target="_blank" class="noDecoration"><h3 class="header">${newEvent.name.text}</h3></a>
-                <h6>Start Date/Time:${newEvent.start.local}</h6>
-                <h6>End Date/Time:${newEvent.end.local}</h6>
-                <button id="save">Save</button>
-                </div>
+  <div id="createMeetUps">
+    <a href="${newEvent.url}" target="_blank" class="noDecoration"><h3 class="header">${newEvent.name.text}</h3></a>
+    <h6>Start Date/Time:${newEvent.start.local}</h6>
+    <h6>End Date/Time:${newEvent.end.local}</h6>
+    <button id="save">Save</button>
+  </div>
                 `;                
 };
 

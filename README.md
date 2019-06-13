@@ -1,4 +1,53 @@
-# Welcome to Nashville: Build an itinerary for a day trip to Music City
+# Welcome to Nashville: Build an itinerary for a day trip to Music City:
+##  Instructions To Run This Application
+
+1.  On your computer register your API at the following:
+    * [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/xbru-cfzi)
+    * [Zomato API](https://developers.zomato.com/api) 
+    * [Eventbrite API](https://www.eventbrite.com/developer/v3/)
+    * [Ticketmaster API](https://developer.ticketmaster.com/products-and-docs/apis/getting-started/)
+1.  See additional API set up instructions below.
+1.  Clone repository fromt Github to your local git repository.
+1.  Add your keys to your own keys.js file and then add that file to the .gitignore file
+
+``` const zomato = {
+    user_key: "Put Your Zomato Key Here",
+}
+
+const ticketmaster_keys = {
+    ticketmaster_key: "Put Your Ticketmaster Key Here",
+ }
+
+ const app_keys = {
+    app_key: "Put Your Metro Gov Key Here",
+}
+
+const app_key = {
+    token: "Put Your Eventbrite Key Here",
+} 
+```
+
+##  Additional Instructions on API Setup
+
+###  Zomato Instructions
+
+1.  Go to the Zomato home page. 
+1.  Register for an account.
+1.  Return to home page.
+1.  Select "Developers" listed under "Foodie" in Zomato footer menu.
+1.  Select API from the menu in the website header.
+
+###  Metro Gove Instructions
+
+1.  Scroll down to create app token button on API page
+1.  Register for an account
+1.  Select create app token on the bottom of the page (not the create app key).
+
+
+-------------------------------------
+
+# Welcome to Nashville: Build an itinerary for a day trip to Music City:
+##  Project Paramaters
 
 In this app users can search for four different things to do/visit in Nashville:
 * parks -- using the Nashville [Metro Gov API](https://dev.socrata.com/foundry/data.nashville.gov/xbru-cfzi)

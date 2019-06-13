@@ -37,6 +37,7 @@ const app_key = {
 1.  Return to home page.
 1.  Select "Developers" listed under "Foodie" in Zomato footer menu.
 1.  Select API from the menu in the website header.
+1.  (You will want to use the Restaurant/search API)
 
 ###  Metro Gove Instructions
 
